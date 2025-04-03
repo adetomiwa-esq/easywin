@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#scratch-card-container {
+    border: 1px solid red;
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+.scratch-card {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.scratch-card img {
+    width: 100%;
+    height: 100%;
+}
+
+canvas {
+    position: absolute;
+    cursor: grabbing;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    width: 600px;
+}
+
+.header {
+    padding: 5px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: green;
+    color: white;
+    width: 100%;
+    position: sticky;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo-box img:nth-child(2) {
+    width: 100px;
+}
+
+.lottery {
+    display: flex;
+}
+
+.lottery>img {
+    height: 300px;
+}
