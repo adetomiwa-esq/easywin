@@ -5,9 +5,8 @@
 }
 
 #scratch-card-container {
-    border: 1px solid red;
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
     position: relative;
 }
 
@@ -29,23 +28,80 @@ canvas {
 }
 
 body {
+    background-image: url('./assets/dice.webp');
     display: flex;
     justify-content: center;
 }
 
 .main {
-    width: 600px;
+    width: 700px;
+    padding-top: 45px;
+    padding-bottom: 45px;
 }
 
 .header {
-    padding: 5px 12px;
+    padding: 15px 12px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: green;
     color: white;
-    width: 100%;
-    position: sticky;
+    width: 700px;
+    position: fixed;
+    top: 0px;
+    z-index: 50;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bottom-controllers {
+    width: 700px;
+    position: fixed;
+    bottom: 0px;
+    z-index: 50;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottom-controllers .play {
+    background-color: #ec7325;
+    border-radius: 8px;
+    width: 75%;
+    padding: 20px 0;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+.input-container {
+    display: flex;
+}
+
+.input-side {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: green;
+    width: 40px;
+    font-size: 17px;
+    border-radius: 6px;
+    margin-left: -6px;
+}
+
+.input-side i {
+    font-size: 10px;
+    margin-left: -5px;
+    margin-bottom: -7px;
+}
+
+.input-container input {
+    width: 110px;
+    padding: 10px 2px;
+    border-radius: 6px;
 }
 
 .logo-box {
@@ -58,10 +114,33 @@ body {
     width: 100px;
 }
 
+.world-cup-splash {
+    position: relative;
+}
+
+.world-cup-splash img {
+    width: 100%;
+}
+
 .lottery {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
 }
 
 .lottery>img {
     height: 300px;
+}
+
+.bottom-sect {
+    margin: 20px auto;
+    width: 500px;
+    border: 8px solid white;
+    background-image: url(./assets/field.jpg);
+}
+
+
+@media screen {
+    
 }

@@ -24,21 +24,26 @@
 // scratchCard.innerHTML = randomIcons.map((icon) => `<img src=${icon}  >`);
 
 const canvas = document.getElementById("scratch-effect");
-
+const playBtn = document.querySelector(".play");
 const context = canvas.getContext("2d");
 
 const init = () => {
-  context.fillStyle = "blue";
-  context.fillRect(0, 0, 300, 300);
+  context.fillStyle = "#FFD700";
+  context.fillRect(0, 0, canvas.width, canvas.height);
+};
+
+const canvasResize = () => {
+  canvas.width = Math.min(window.innerWidth * 0.6, 280);
+  canvas.height = canvas.width;
+  //init();
 };
 
 let isDragging = false;
-let done = false;
 
 const scratch = (x, y) => {
   context.globalCompositeOperation = "destination-out";
   context.beginPath();
-  context.arc(x, y, 24, 0, 2 * Math.PI);
+  context.arc(x, y, canvas.width * 0.06, 0, 2 * Math.PI);
   context.fill();
   checkScratchCompletion();
 };
@@ -56,11 +61,11 @@ canvas.addEventListener("mousemove", (e) => {
 });
 
 canvas.addEventListener("mouseup", () => {
-  isDragging(false);
+  isDragging = false;
 });
 
 canvas.addEventListener("mouseleave", () => {
-  isDragging(false);
+  isDragging = false;
 });
 
 const checkScratchCompletion = () => {
@@ -74,11 +79,18 @@ const checkScratchCompletion = () => {
     }
   }
 
-  if (transparentPixels / totalPixels > 0.8) {
+  if (transparentPixels / totalPixels > 0.83) {
+    // isDragging = false;
     canvas.removeEventListener("mousedown", scratch);
     canvas.removeEventListener("mousemove", scratch);
     alert("Congratulations! You have completed scratching the card.");
   }
 };
 
-init();
+playBtn.addEventListener("click", () => {
+  init();
+});
+
+window.addEventListener("resize", canvasResize);
+
+canvasResize();
