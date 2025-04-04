@@ -207,9 +207,6 @@ body {
 
 /* media queries */
 @media(max-width:500px) {
-    * {
-        border: 1px solid red;
-    }
 
     .lottery>img {
         width: 30%;
