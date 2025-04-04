@@ -2,8 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
+/* The styling below is or the scratch card */
 #scratch-card-container {
     width: 280px;
     height: 280px;
@@ -25,6 +27,9 @@
 canvas {
     position: absolute;
     cursor: grabbing;
+    display: none;
+    width: 100%;
+    min-height: 100%;
 }
 
 body {
@@ -33,8 +38,11 @@ body {
     justify-content: center;
 }
 
+
+/* floating header styling, bottom button and input styling */
 .main {
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
     padding-top: 45px;
     padding-bottom: 45px;
 }
@@ -46,7 +54,8 @@ body {
     justify-content: space-between;
     background: green;
     color: white;
-    width: 700px;
+    max-width: 700px;
+    width: 100%;
     position: fixed;
     top: 0px;
     z-index: 50;
@@ -55,9 +64,10 @@ body {
 }
 
 .bottom-controllers {
-    width: 700px;
+    width: 95%;
+    max-width: 700px;
     position: fixed;
-    bottom: 0px;
+    bottom: 8px;
     z-index: 50;
     left: 50%;
     transform: translateX(-50%);
@@ -69,11 +79,12 @@ body {
 .bottom-controllers .play {
     background-color: #ec7325;
     border-radius: 8px;
-    width: 75%;
+    width: calc(96% - 150px);
     padding: 20px 0;
     border: none;
     outline: none;
     color: white;
+    cursor: pointer;
 }
 
 .input-container {
@@ -89,7 +100,7 @@ body {
     width: 40px;
     font-size: 17px;
     border-radius: 6px;
-    margin-left: -6px;
+    margin-left: -8px;
 }
 
 .input-side i {
@@ -102,6 +113,8 @@ body {
     width: 110px;
     padding: 10px 2px;
     border-radius: 6px;
+    border: none;
+    outline: none;
 }
 
 .logo-box {
@@ -114,6 +127,9 @@ body {
     width: 100px;
 }
 
+
+
+/* styling for the center/major content of the page */
 .world-cup-splash {
     position: relative;
 }
@@ -131,16 +147,72 @@ body {
 
 .lottery>img {
     height: 300px;
+    width: 36%;
+
 }
 
 .bottom-sect {
     margin: 20px auto;
-    width: 500px;
+    width: 98%;
+    max-width: 500px;
     border: 8px solid white;
     background-image: url(./assets/field.jpg);
+    padding-bottom: 20px;
 }
 
 
-@media screen {
-    
+/* styling for the alert */
+.alert-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100svh;
+    background-color: rgba(0, 0, 0, 0.466);
+    z-index: 60;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.display-alert {
+    display: flex;
+}
+
+.failure-alert {
+    color: white;
+    background-color: black;
+    width: 80%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+    padding: 15px 0;
+    position: relative;
+    font-size: 24px;
+}
+
+.close-alert {
+    position: absolute;
+    right: 8px;
+    top: 2px;
+    background-color: transparent;
+    color: red;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+
+/* media queries */
+@media(max-width:500px) {
+    * {
+        border: 1px solid red;
+    }
+
+    .lottery>img {
+        width: 30%;
+        height: auto;
+    }
 }
